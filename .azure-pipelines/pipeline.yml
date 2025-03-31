@@ -7,9 +7,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  azureSubscription: 'azureml-connection'
-  resourceGroup: 'your-resource-group'
-  workspaceName: 'your-workspace-name'
+  azureSubscription: 'llm_ml'
+  resourceGroup: 'mlops'
+  workspaceName: 'llm_mlops'
 
 steps:
 - task: AzureCLI@2
