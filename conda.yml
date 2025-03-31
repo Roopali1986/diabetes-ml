@@ -1,0 +1,7 @@
+name: diabetes-env
+dependencies:
+  - python=3.8
+  - scikit-learn
+  - pip
+  - pip:
+    - azureml-core
