@@ -3,6 +3,6 @@ command: python train.py
 environment:
   conda_file: conda.yml
   image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04
-compute: azureml:cpu-cluster
+compute: azureml:mlops4
 code: .
 experiment_name: diabetes_training_exp
