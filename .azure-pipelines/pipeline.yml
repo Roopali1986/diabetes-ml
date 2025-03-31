@@ -1,0 +1,23 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  azureSubscription: 'azureml-connection'
+  resourceGroup: 'your-resource-group'
+  workspaceName: 'your-workspace-name'
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: $(azureSubscription)
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+      az extension add -n ml -y
+      az configure --defaults workspace=$(workspaceName) group=$(resourceGroup)
+      az ml job create --file train-job.yml
